@@ -1,22 +1,27 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
 <html>
 <head>
 	<title>Carpal Tunnel</title>
 	<link rel="stylesheet" href="assets/style.css">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
 	<script src="assets/script.js"></script>
 </head>
 
-<body onload="pollServer()">
+<body onload="startup()">
 
-<h1>Your current hand angle is:</h1>
+<div id="angle-container">
+	<h1>Your current hand angle is:</h1>
+</div>
 
-<div id="angle"> {{ angle }} </div>
-
-<button id="pause" onclick="pause()">Pause</button>
-<button id="resume" onclick="resume()">Resume</button>
-<div id="message"></div>
-
+<div class="button-container"> 
+	<button id="pause" onclick="pause()">Pause</button>
+	<button id="resume" onclick="resume()">Resume</button>
+	<div id="message"></div>
+</div>
 
 </body>
 </html>
