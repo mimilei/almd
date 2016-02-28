@@ -30,6 +30,26 @@ function pollServer() {
                 var translatedAngle = (currentAngle * tau / 360) + 3 * tau/4;
                 var absAngle = Math.abs(currentAngle);
                 var angleString = absAngle.toString();
+                var color;
+                if (absAngle <= 15) {
+                  color = '#82db5e';
+                } else if (absAngle <= 20) {
+                  color = '#92cc5e';
+                } else if (absAngle <= 30) {
+                  color = '#a0c744';
+                } else if (absAngle <= 40) {
+                  color = '#e2e35c';
+                } else if (absAngle <= 50) {
+                  color = '#EC8D3E';
+                } else if (absAngle <= 60) {
+                  color = '#e39257';
+                } else if (absAngle <= 70) {
+                  color = '#e0805f';
+                } else if (absAngle <= 80) {
+                  color = '#ef715f';
+                } else {
+                  color = "#ff625f";
+                }
                 if (currentAngle < 0) {
                     $("#sign").html("-");
                 } else {
@@ -42,7 +62,7 @@ function pollServer() {
                 // Every so often, start a transition to a new random angle. Use transition.call
                 // (identical to selection.call) so that we can encapsulate the logic for
                 // tweening the arc in a separate function below.
-                  foreground.transition()
+                  foreground.transition().style("fill", color)
                       .duration(750)
                       .call(arcTween, translatedAngle);
                 setTimeout(pollServer, 1000);
