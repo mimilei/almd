@@ -2,13 +2,25 @@ body {
 	padding: 5em;
 	background-color: #F0543F;
 	font-family: 'Open Sans', sans-serif;
+	text-align: center;
 }
 
-#resume {
-	display: none;
-}
 
 button {
 	margin-top: 1em;
 	margin-bottom: 1em;
 }
+
+
+#message {
+	height: 1em;
+}
+
+.display-angle {
+	font-size: 5em;
+}
+
+.single-digit {
+	font-size: 8em;
+}
+
