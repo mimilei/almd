@@ -40,6 +40,7 @@
 	background: #e23a6e;
 	z-index: 9;
 	bottom: 0;
+	left: 0;
 }
 
 #st-control-1, #st-control-1 + a {
@@ -186,4 +187,60 @@ div.logo {
   display: inline-block;
   position: fixed;
   left: 45%;
+}
+
+button {
+	margin-top: 1em;
+	margin-bottom: 1em;
+  padding: 8;
+}
+
+#message {
+	height: 1em;
+}
+
+.display-angle {
+	font-size: 5em;
+}
+#st-panel-2 h3 {
+    position: relative;
+    top: 26%;
+    font-weight: 300;
+    font-size: 25;
+    color: #8b8b8b;
+}
+
+#st-panel-2 p {
+    position: relative;
+    top: 25%;
+    line-height: 1.5em;
+    font-weight: 300;
+    color: black;
+}
+
+#st-panel-3 h2 {
+    position: relative;
+    top: 10%;
+    left: 50%;
+    margin-left: -570;
+}
+
+#angle-container h3 {
+    position: relative;
+    top: 30%;
+    font-weight: 300;
+    font-size: 25;
+    color: #8b8b8b;
+}
+
+div#angle-container {
+    position: relative;
+    top: 80px;
+}
+
+.button-container {
+    top: 100;
+    position: relative;
+    left: 35%;
+    margin-left: -1000;
 }

@@ -11,7 +11,7 @@ var request = {
 };
 var queryString = root + '?' + $.param(request);
 
-var τ = 2 * Math.PI; // http://tauday.com/tau-manifesto
+var tau = 2 * Math.PI; // http://tauday.com/tau-manifesto
 
 function startup() {
     setUpArcs();
@@ -27,7 +27,7 @@ function pollServer() {
         success: function (response) {
             if (polling) {
                 var currentAngle = Number(response);
-                var translatedAngle = (currentAngle * τ / 360) + 3 * τ/4;
+                var translatedAngle = (currentAngle * tau / 360) + 3 * tau/4;
                 var absAngle = Math.abs(currentAngle);
                 var angleString = absAngle.toString();
                 if (currentAngle < 0) {
@@ -37,7 +37,7 @@ function pollServer() {
                 }
                 if (absAngle < 10) {
                     angleString = "0" + angleString;
-                } 
+                }
                 $("#angle").html(angleString);
                 // Every so often, start a transition to a new random angle. Use transition.call
                 // (identical to selection.call) so that we can encapsulate the logic for
@@ -77,13 +77,13 @@ var arc = d3.svg.arc()
 
 var foreground;
 
-var threshold = τ * (20/360);
+var threshold = tau * (20/360);
 
-function setUpArcs() 
+function setUpArcs()
 {
     var width = 960,
         height = 500
-        
+
 
     // Create the SVG container, and apply a transform such that the origin is the
     // center of the canvas. This way, we don't need to position arcs individually.
@@ -127,24 +127,27 @@ function setUpArcs()
         .attr("x", -45)
         .attr("y", 25);
 
+    var degSymbol = '\u00B0';
+
     svg.append("text")
-        .text("°")
+        // .text("°")
+        .text(degSymbol)
         .attr("id", "degree")
         .attr("class", "display-angle")
         .attr("x", 45)
         .attr("y", 20);
 
-    // Add the background arc, from 0 to 100% (τ).
+    // Add the background arc, from 0 to 100% (tau).
     var background = svg.append("path")
-        .datum({startAngle: 0, endAngle: τ}) // Change this if you want a smaller background
+        .datum({startAngle: 0, endAngle: tau}) // Change this if you want a smaller background
         .style("fill", "#ddd")
         .attr("d", arc);
 
     // Add the foreground arc in orange, currently showing 25%%.
     foreground = svg.append("path")
-        .datum({endAngle: .8 * τ})
+        .datum({endAngle: .8 * tau})
         .style("fill", "orange")
-        .attr("d", arc.startAngle(τ * .75));
+        .attr("d", arc.startAngle(tau * .75));
 
 }
 
@@ -197,7 +200,3 @@ function arcTween(transition, newAngle) {
     };
   });
 }
-
-
-
-

@@ -2,8 +2,12 @@
   <head>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700,300,100' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="assets/mainsite_style.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
+    <script src="assets/script.js"></script>
   </head>
-  <body>
+  <body onload="startup()">
     <div class="st-container">
       <input type="radio" name="radio-set" checked="checked" id="st-control-1"/>
     	<a href="#st-panel-1">Home</a>
@@ -22,11 +26,29 @@
         </section>
         <section class="st-panel demo" id="st-panel-2">
           <h2>About</h2>
-          <h3></h3>
-          <p>Blue mountain, et percolator, cappuccino cinnamon cup breve kopi-luwak affogato cup aroma. Medium grinder, at cup turkish steamed aged coffee. Caffeine espresso, froth roast, cortado flavour cultivar barista steamed id coffee. Irish aftertaste galão extra, java con panna beans caffeine aged java.</p>
+          <h3>Your hands are a key part of you who are and what you do.</h3>
+          <p>We created ALMD (pronounced "almond") to help people overcome the health
+            barriers of modern society. Targeted towards those who suffer from or are at
+            risk of developing carpal tunnel, ALMD is a smart lifestyle coach that
+            measures your positioning at the keyboard and sends alerts
+            and recommendations when your posture and habits are unhealthy. Carpal tunnel
+            is a common cause of work absence as well as the cause of much pain and
+            suffering amongst modern professionals. By spreading awareness of what it means
+            to be healthy at the computer and workplace, we envision a world where such
+            ailments no longer hold back the individual from living their life to the fullest.</p>
         </section>
         <section class="st-panel demo" id="st-panel-3">
-          <h2>Cinnamon</h2>
+          <h2>Try It Out</h2>
+          <div onload="startup()">
+            <div id="angle-container">
+            	<h3>Your current hand angle is:</h3>
+            </div>
+            <div class="button-container">
+            	<button id="pause" onclick="pause()">Pause</button>
+            	<button id="resume" onclick="resume()">Resume</button>
+            	<div id="message"></div>
+            </div>
+          </div>
         </section>
       </div>
   </body>
