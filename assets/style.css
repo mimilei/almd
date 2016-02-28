@@ -1,0 +1,14 @@
+body {
+	padding: 5em;
+	background-color: #F0543F;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#resume {
+	display: none;
+}
+
+button {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
