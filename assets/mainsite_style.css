@@ -244,3 +244,7 @@ div#angle-container {
     left: 35%;
     margin-left: -1000;
 }
+
+a:link {
+  text-decoration: none;
+}
